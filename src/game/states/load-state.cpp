@@ -1,30 +1,24 @@
-#include "app.hpp"
-
-#include "gui/dummy.cpp"
-#include "logic/hello.hpp"
+#include "game/states/load-state.hpp"
 
 using namespace game;
 
 // -----------------------------------------------------------------------------
 
-CApp::CApp() {}
-CApp::~CApp() {}
+CLoadState::CLoadState() {}
+CLoadState::~CLoadState() {}
 
 // -----------------------------------------------------------------------------
 
-void CApp::Start(int width, int height) {
-	Gui::printMsg();
-	Logic::Hello* tmp = new Logic::Hello();
-	tmp->greet();
-	delete tmp;
+void CLoadState::onEnter() {
+
 }
 
-void CApp::Exit() {
+void CLoadState::onLeave() {
 
 }
 
 // -----------------------------------------------------------------------------
 
-void CApp::Run() {
+void CLoadState::onRun() {
 
 }

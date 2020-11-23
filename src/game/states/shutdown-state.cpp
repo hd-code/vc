@@ -1,30 +1,24 @@
-#include "app.hpp"
-
-#include "gui/dummy.cpp"
-#include "logic/hello.hpp"
+#include "game/states/shutdown-state.hpp"
 
 using namespace game;
 
 // -----------------------------------------------------------------------------
 
-CApp::CApp() {}
-CApp::~CApp() {}
+CShutdownState::CShutdownState() {}
+CShutdownState::~CShutdownState() {}
 
 // -----------------------------------------------------------------------------
 
-void CApp::Start(int width, int height) {
-	Gui::printMsg();
-	Logic::Hello* tmp = new Logic::Hello();
-	tmp->greet();
-	delete tmp;
+void CShutdownState::onEnter() {
+
 }
 
-void CApp::Exit() {
+void CShutdownState::onLeave() {
 
 }
 
 // -----------------------------------------------------------------------------
 
-void CApp::Run() {
+void CShutdownState::onRun() {
 
 }

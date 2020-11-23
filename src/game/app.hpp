@@ -1,15 +1,21 @@
 #pragma once
 
-namespace Game {
+namespace game {
 
 class CApp {
     public:
-        CApp();
-        ~CApp();
+        static CApp& instance() {
+            static CApp app;
+            return app;
+        }
 
         void Start(int width, int height);
         void Run();
         void Exit();
+
+    private:
+        CApp();
+        ~CApp();
 };
 
 }

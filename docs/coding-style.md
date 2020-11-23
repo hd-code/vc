@@ -108,9 +108,9 @@ Only use class enums to keep the namespace clean. Enums are written in PascalCas
 Correct:
 
 ```cpp
-class enum EDirection { UP, DOWN, LEFT, RIGHT };
+enum class EDirection { UP, DOWN, LEFT, RIGHT };
 
-class enum EColor {
+enum class EColor {
     RED;
     GREEN;
     BLUE;
@@ -122,7 +122,7 @@ Incorrect:
 ```cpp
 enum Direction { UP, DOWN, LEFT, RIGHT }; // not a class enum, missing prefix 'E'
 
-class enum ecolor { // not written in PascalCase
+enum class ecolor { // not written in PascalCase
     red;   // not written in ALL_CAPS_SNAKE_CASE
     Green; // not written in ALL_CAPS_SNAKE_CASE
     BlUe;  // not written in ALL_CAPS_SNAKE_CASE

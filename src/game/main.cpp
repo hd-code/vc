@@ -3,14 +3,14 @@
 #include <exception>
 #include <iostream>
 
+using namespace game;
+
 // -----------------------------------------------------------------------------
 
 int main() {
-    Game::CApp app;
-
     try {
-        app.Start(1920, 1080);
-        app.Run();
+        CApp::instance().Start(1920, 1080);
+        CApp::instance().Run();
     }
     catch (const std::exception e) {
         std::cout << e.what() << std::endl;
@@ -20,7 +20,7 @@ int main() {
     }
 
     try {
-        app.Exit();
+        CApp::instance().Exit();
     }
     catch (const std::exception e) {
         std::cout << e.what() << std::endl;

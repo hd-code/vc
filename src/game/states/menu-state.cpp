@@ -1,30 +1,24 @@
-#include "app.hpp"
-
-#include "gui/dummy.cpp"
-#include "logic/hello.hpp"
+#include "game/states/menu-state.hpp"
 
 using namespace game;
 
 // -----------------------------------------------------------------------------
 
-CApp::CApp() {}
-CApp::~CApp() {}
+CMenuState::CMenuState() {}
+CMenuState::~CMenuState() {}
 
 // -----------------------------------------------------------------------------
 
-void CApp::Start(int width, int height) {
-	Gui::printMsg();
-	Logic::Hello* tmp = new Logic::Hello();
-	tmp->greet();
-	delete tmp;
+void CMenuState::onEnter() {
+
 }
 
-void CApp::Exit() {
+void CMenuState::onLeave() {
 
 }
 
 // -----------------------------------------------------------------------------
 
-void CApp::Run() {
+void CMenuState::onRun() {
 
 }
