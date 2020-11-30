@@ -4,8 +4,19 @@ using namespace game;
 
 // -----------------------------------------------------------------------------
 
-CShutdownState::CShutdownState() {}
-CShutdownState::~CShutdownState() {}
+CShutdownState::CShutdownState() {
+
+}
+
+CShutdownState::~CShutdownState() {
+
+}
+
+// -----------------------------------------------------------------------------
+
+EState CShutdownState::getState() const {
+    return EState::SHUTDOWN;
+}
 
 // -----------------------------------------------------------------------------
 
@@ -17,8 +28,6 @@ void CShutdownState::onLeave() {
 
 }
 
-// -----------------------------------------------------------------------------
-
-void CShutdownState::onRun() {
+EState CShutdownState::onRun() {
 
 }

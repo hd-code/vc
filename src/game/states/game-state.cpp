@@ -4,8 +4,19 @@ using namespace game;
 
 // -----------------------------------------------------------------------------
 
-CGameState::CGameState() {}
-CGameState::~CGameState() {}
+CGameState::CGameState() {
+
+}
+
+CGameState::~CGameState() {
+    
+}
+
+// -----------------------------------------------------------------------------
+
+EState CGameState::getState() const {
+    return EState::GAME;
+}
 
 // -----------------------------------------------------------------------------
 
@@ -17,8 +28,6 @@ void CGameState::onLeave() {
 
 }
 
-// -----------------------------------------------------------------------------
-
-void CGameState::onRun() {
+EState CGameState::onRun() {
 
 }

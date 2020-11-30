@@ -4,8 +4,19 @@ using namespace game;
 
 // -----------------------------------------------------------------------------
 
-CLoadState::CLoadState() {}
-CLoadState::~CLoadState() {}
+CLoadState::CLoadState() {
+
+}
+
+CLoadState::~CLoadState() {
+    
+}
+
+// -----------------------------------------------------------------------------
+
+EState CLoadState::getState() const {
+    return EState::LOAD;
+}
 
 // -----------------------------------------------------------------------------
 
@@ -17,8 +28,6 @@ void CLoadState::onLeave() {
 
 }
 
-// -----------------------------------------------------------------------------
-
-void CLoadState::onRun() {
+EState CLoadState::onRun() {
 
 }

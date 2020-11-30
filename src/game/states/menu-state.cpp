@@ -4,8 +4,19 @@ using namespace game;
 
 // -----------------------------------------------------------------------------
 
-CMenuState::CMenuState() {}
-CMenuState::~CMenuState() {}
+CMenuState::CMenuState() {
+
+}
+
+CMenuState::~CMenuState() {
+    
+}
+
+// -----------------------------------------------------------------------------
+
+EState CMenuState::getState() const {
+    return EState::MENU;
+}
 
 // -----------------------------------------------------------------------------
 
@@ -17,8 +28,6 @@ void CMenuState::onLeave() {
 
 }
 
-// -----------------------------------------------------------------------------
-
-void CMenuState::onRun() {
+EState CMenuState::onRun() {
 
 }

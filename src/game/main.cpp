@@ -9,8 +9,8 @@ using namespace game;
 
 int main() {
     try {
-        CApp::instance().Start(1920, 1080);
-        CApp::instance().Run();
+        CApp::instance().start(1920, 1080);
+        CApp::instance().run();
     }
     catch (const std::exception e) {
         std::cout << e.what() << std::endl;
@@ -20,7 +20,7 @@ int main() {
     }
 
     try {
-        CApp::instance().Exit();
+        CApp::instance().exit();
     }
     catch (const std::exception e) {
         std::cout << e.what() << std::endl;

@@ -4,8 +4,19 @@ using namespace game;
 
 // -----------------------------------------------------------------------------
 
-CUnloadState::CUnloadState() {}
-CUnloadState::~CUnloadState() {}
+CUnloadState::CUnloadState() {
+
+}
+
+CUnloadState::~CUnloadState() {
+
+}
+
+// -----------------------------------------------------------------------------
+
+EState CUnloadState::getState() const {
+    return EState::UNLOAD;
+}
 
 // -----------------------------------------------------------------------------
 
@@ -17,8 +28,6 @@ void CUnloadState::onLeave() {
 
 }
 
-// -----------------------------------------------------------------------------
-
-void CUnloadState::onRun() {
+EState CUnloadState::onRun() {
 
 }
