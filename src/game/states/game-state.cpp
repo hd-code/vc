@@ -29,5 +29,5 @@ void CGameState::onLeave() {
 }
 
 EState CGameState::onRun() {
-
+    return EState::GAME;
 }

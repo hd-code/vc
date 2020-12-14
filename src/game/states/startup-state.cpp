@@ -29,5 +29,5 @@ void CStartupState::onLeave() {
 }
 
 EState CStartupState::onRun() {
-
+    return EState::STARTUP;
 }

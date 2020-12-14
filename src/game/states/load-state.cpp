@@ -29,5 +29,5 @@ void CLoadState::onLeave() {
 }
 
 EState CLoadState::onRun() {
-
+    return EState::LOAD;
 }

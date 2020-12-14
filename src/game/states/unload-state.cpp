@@ -29,5 +29,5 @@ void CUnloadState::onLeave() {
 }
 
 EState CUnloadState::onRun() {
-
+    return EState::UNLOAD;
 }

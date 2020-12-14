@@ -29,5 +29,5 @@ void CMenuState::onLeave() {
 }
 
 EState CMenuState::onRun() {
-
+    return EState::MENU;
 }

@@ -1,3 +1,5 @@
+#pragma once
+
 namespace core {
 
 template<class T>
@@ -8,8 +10,12 @@ class CSingleton {
             return instance;
         }
 
+    protected:
+        CSingleton() = default;
+        ~CSingleton() = default;
+
     private:
-        T(const T& original) = delete; // is not implemented
+        CSingleton(const T& original) = delete; // is not implemented
         T& operator = (const T& original) = delete; // is not implemented
 };
 

@@ -29,5 +29,5 @@ void CShutdownState::onLeave() {
 }
 
 EState CShutdownState::onRun() {
-
+    return EState::SHUTDOWN;
 }
