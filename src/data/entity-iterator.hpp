@@ -4,7 +4,7 @@
 
 namespace data {
 
-class CEntity {
+class CEntityIterator {
 
 };
 
