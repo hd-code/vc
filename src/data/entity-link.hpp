@@ -13,15 +13,15 @@ class CEntityLink {
         CEntity& getEntity();
         const CEntity& getEntity() const;
 
-        CEntityLink& getPrevious();
-        CEntityLink& getNext();
-
     public:
         // The link will be appended to the anchor
         void link(CEntityLink &anchor);
         void unlink();
 
         bool isLinked() const;
+
+        CEntityLink& getPrevious();
+        CEntityLink& getNext();
 
     private:
         CEntityLink* previous;

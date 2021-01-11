@@ -1,33 +1,33 @@
-#include "game/states/game-state.hpp"
+#include "game/phases/load-phase.hpp"
 
 using namespace game;
 
 // -----------------------------------------------------------------------------
 
-CGameState::CGameState() {
+CLoadPhase::CLoadPhase() {
 
 }
 
-CGameState::~CGameState() {
+CLoadPhase::~CLoadPhase() {
     
 }
 
 // -----------------------------------------------------------------------------
 
-EState CGameState::getState() const {
-    return EState::GAME;
+EPhase CLoadPhase::getPhase() const {
+    return EPhase::LOAD;
 }
 
 // -----------------------------------------------------------------------------
 
-void CGameState::onEnter() {
+void CLoadPhase::onEnter() {
 
 }
 
-void CGameState::onLeave() {
+void CLoadPhase::onLeave() {
 
 }
 
-EState CGameState::onRun() {
-    return EState::GAME;
+EPhase CLoadPhase::onRun() {
+    return EPhase::GAME;
 }

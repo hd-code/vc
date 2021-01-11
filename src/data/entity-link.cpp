@@ -35,14 +35,6 @@ const CEntity& CEntityLink::getEntity() const {
         );
 }
 
-CEntityLink& CEntityLink::getPrevious() {
-    return *previous;
-}
-
-CEntityLink& CEntityLink::getNext() {
-    return *next;
-}
-
 // -----------------------------------------------------------------------------
 
 void CEntityLink::link(CEntityLink &anchor) {
@@ -67,4 +59,12 @@ void CEntityLink::unlink() {
 
 bool CEntityLink::isLinked() const {
     return previous != this && next != this;
+}
+
+CEntityLink& CEntityLink::getPrevious() {
+    return *previous;
+}
+
+CEntityLink& CEntityLink::getNext() {
+    return *next;
 }

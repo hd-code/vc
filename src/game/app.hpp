@@ -1,15 +1,15 @@
 #pragma once
 
 #include "core/singleton.hpp"
-#include "game/states/base-state.hpp"
+#include "game/phases/base-phase.hpp"
 
 namespace game {
 
 class CApp : public core::CSingleton<CApp> {
     public:
         void start(int width, int height);
-        void run();
         void exit();
+        void run();
 
     private:
         template<class T>
@@ -20,10 +20,10 @@ class CApp : public core::CSingleton<CApp> {
 
     private:
         void onRun();
-        void onTransition(EState newState);
+        void onTransition(EPhase newState);
 
     private:
-        IBaseState* currentState;
+        IBasePhase* currentPhase;
 };
 
 }

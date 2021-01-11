@@ -1,27 +1,27 @@
 #pragma once
 
 #include "core/singleton.hpp"
-#include "game/states/base-state.hpp"
+#include "game/phases/base-phase.hpp"
 
 // -----------------------------------------------------------------------------
 
 namespace game {
 
-class CGameState : public core::CSingleton<CGameState>, public IBaseState {
+class CGamePhase : public core::CSingleton<CGamePhase>, public IBasePhase {
     public:
-        EState getState() const;
+        EPhase getPhase() const;
 
     public:
         void onEnter();
-        EState onRun();
         void onLeave();
+        EPhase onRun();
 
     private:
         template<class T>
         friend class core::CSingleton;
 
-        CGameState();
-        ~CGameState();
+        CGamePhase();
+        ~CGamePhase();
 };
 
 }

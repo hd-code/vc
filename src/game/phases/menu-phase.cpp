@@ -1,33 +1,33 @@
-#include "game/states/load-state.hpp"
+#include "game/phases/menu-phase.hpp"
 
 using namespace game;
 
 // -----------------------------------------------------------------------------
 
-CLoadState::CLoadState() {
+CMenuPhase::CMenuPhase() {
 
 }
 
-CLoadState::~CLoadState() {
+CMenuPhase::~CMenuPhase() {
     
 }
 
 // -----------------------------------------------------------------------------
 
-EState CLoadState::getState() const {
-    return EState::LOAD;
+EPhase CMenuPhase::getPhase() const {
+    return EPhase::MENU;
 }
 
 // -----------------------------------------------------------------------------
 
-void CLoadState::onEnter() {
+void CMenuPhase::onEnter() {
 
 }
 
-void CLoadState::onLeave() {
+void CMenuPhase::onLeave() {
 
 }
 
-EState CLoadState::onRun() {
-    return EState::LOAD;
+EPhase CMenuPhase::onRun() {
+    return EPhase::LOAD;
 }

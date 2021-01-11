@@ -1,17 +1,19 @@
 #include "app.hpp"
 
-#include "game/states/game-state.hpp"
-#include "game/states/load-state.hpp"
-#include "game/states/menu-state.hpp"
-#include "game/states/shutdown-state.hpp"
-#include "game/states/startup-state.hpp"
-#include "game/states/unload-state.hpp"
+#include "game/phases/game-phase.hpp"
+#include "game/phases/load-phase.hpp"
+#include "game/phases/menu-phase.hpp"
+#include "game/phases/shutdown-phase.hpp"
+#include "game/phases/startup-phase.hpp"
+#include "game/phases/unload-phase.hpp"
+
+#include <iostream>
 
 using namespace game;
 
 // -----------------------------------------------------------------------------
 
-CApp::CApp() : currentState(&CStartupState::instance()) {
+CApp::CApp() : currentPhase(&CStartupPhase::getInstance()) {
 
 }
 
@@ -30,46 +32,53 @@ void CApp::exit() {
 }
 
 void CApp::run() {
-	
+	while (currentPhase != nullptr) {
+		onRun();
+	}
 }
 
 // -----------------------------------------------------------------------------
 
 void CApp::onRun() {
-	EState nextState = currentState->onRun();
-	if (nextState != currentState->getState()) {
-		onTransition(nextState);
+	std::cout << int(currentPhase->getPhase()) << std::endl;
+	EPhase nextPhase = currentPhase->onRun();
+	if (nextPhase != currentPhase->getPhase()) {
+		onTransition(nextPhase);
 	}
 }
 
-void CApp::onTransition(EState newState) {
-	currentState->onLeave();
+void CApp::onTransition(EPhase nextPhase) {
+	currentPhase->onLeave();
 
-	switch (newState) {
-		case EState::GAME:
-			currentState = &CGameState::instance();
+	switch (nextPhase) {
+		case EPhase::EXIT:
+			currentPhase = nullptr;
+			return;
+
+		case EPhase::GAME:
+			currentPhase = &CGamePhase::getInstance();
 			break;
 
-		case EState::LOAD:
-			currentState = &CLoadState::instance();
+		case EPhase::LOAD:
+			currentPhase = &CLoadPhase::getInstance();
 			break;
 
-		case EState::MENU:
-			currentState = &CMenuState::instance();
+		case EPhase::MENU:
+			currentPhase = &CMenuPhase::getInstance();
 			break;
 
-		case EState::SHUTDOWN:
-			currentState = &CShutdownState::instance();
+		case EPhase::SHUTDOWN:
+			currentPhase = &CShutdownPhase::getInstance();
 			break;
 
-		case EState::STARTUP:
-			currentState = &CStartupState::instance();
+		case EPhase::STARTUP:
+			currentPhase = &CStartupPhase::getInstance();
 			break;
 
-		case EState::UNLOAD:
-			currentState = &CUnloadState::instance();
+		case EPhase::UNLOAD:
+			currentPhase = &CUnloadPhase::getInstance();
 			break;
 	}
 
-	currentState->onEnter();
+	currentPhase->onEnter();
 }

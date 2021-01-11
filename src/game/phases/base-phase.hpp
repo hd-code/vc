@@ -2,23 +2,24 @@
 
 namespace game {
 
-enum class EState {
+enum class EPhase {
     STARTUP,
     MENU,
     LOAD,
     GAME,
     UNLOAD,
     SHUTDOWN,
+    EXIT,
 };
 
-class IBaseState {
+class IBasePhase {
     public:
-        virtual EState getState() const = 0;
+        virtual EPhase getPhase() const = 0;
 
     public:
         virtual void onEnter() = 0;
-        virtual EState onRun() = 0;
         virtual void onLeave() = 0;
+        virtual EPhase onRun() = 0;
 };
 
 }
